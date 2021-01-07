@@ -197,7 +197,6 @@ const programs = [
 ]
 
 const getLiveProgram = () => {
-  return programs[0][0];
   const now = new Date();
   const todayPrograms = programs[now.getDay()];
   const timeNow = `${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}`;
