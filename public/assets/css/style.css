@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
+
+html,
+body {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+  color: #313131;
+  background: #56CCF2;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #56CCF2, #2F80ED);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #56CCF2, #2F80ED); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.header {
+  padding: 4% 5% 1% 5%;
+}
+
+.logo {
+  height: 45px;
+  width: auto;
+}
+
+.live-now {
+  float: right;
+  display: flex;
+  align-items: center;
+  margin: 0 10px;
+  padding: 4px 8px;
+  border-radius: 30px;
+  background-color: #fff;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+}
+
+.live-now-program {
+  display: block;
+  margin: 4px 10px;
+  font-weight: 600;
+  line-height: 11pt;
+}
+
+.live-now-announcer {
+  display: block;
+  font-size: 8.5pt;
+  font-weight: 400;
+  margin: 4px 10px;
+}
+
+.live-now-program, .live-now-announcer {
+  color: #313131;
+}
+
+.live-now-icon {
+	background: #FF0C0C;
+	border-radius: 50%;
+	margin: 10px;
+	height: 15px;
+	width: 15px;
+	box-shadow: 0 0 0 0 rgba(255, 12, 12, 1);
+	transform: scale(1);
+  animation: pulse 2s infinite;
+  display: inline-block;
+}
+
+@keyframes pulse {
+	0% {
+		transform: scale(0.95);
+		box-shadow: 0 0 0 0 rgba(255, 12, 12, 0.7);
+	}
+
+	70% {
+		transform: scale(1);
+		box-shadow: 0 0 0 10px rgba(255, 12, 12, 0);
+	}
+
+	100% {
+		transform: scale(0.95);
+		box-shadow: 0 0 0 0 rgba(255, 12, 12, 0);
+	}
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2% 5% 0 5%;
+}
+
+section header {
+  width: 50%;
+  padding: 1.5% 3%;
+}
+
+section aside {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slogan {
+  font-size: 40pt;
+  font-weight: 900;
+  color: #FFFFFF;
+}
+
+.btn-live {
+  padding: 15px 20px;
+  border-radius: 20px;
+  background-color: #FFFFFF;
+  color: #2F80ED;
+  font-size: 12pt;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 700;
+  transition: 0.5s;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+}
+
+.btn-live:hover {
+  background-color: #2F80ED;
+  color: #FFF;
+  cursor: pointer;
+}
+
+a > .live-now {
+  text-decoration: none;
+}
+
+.banner-image img {
+  max-width: 500px;
+  border-radius: 69% 31% 24% 76% / 53% 59% 41% 47%;
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+
+.footer {
+  margin: 8px 12px 12px 12px;
+  text-align: center;
+  color: #FFF;
+  font-size: 11pt;
+  font-weight: 500;
+}

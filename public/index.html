@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang='pt-br'>
+	<head>
+    <title>Marazul FM 98.7</title>
+
+		<meta charset='utf-8'/>
+		<meta name='keywords' content='radio, marazul, caiçara'>
+		<meta name='description' content='Site da rádio Marazul FM 98.7 - Caiçara-Cruz-CE'>
+		<meta name='author' content='George Albuquerque Pinto'>
+		<meta name='robots' content='index,follow'>
+
+		<link rel='stylesheet' type='text/css' href='./assets/css/style.css'>
+	</head>
+	<body>
+		<header class='header'>			
+			<nav>
+				<a href='./live.html' target='_black'>
+					<div id='live-now' class='live-now'>
+						<div class='live-now-icon'></div>
+						<span>
+							<span id='live-now-program' class='live-now-program'></span>
+							<span id='live-now-announcer' class='live-now-announcer'></span>
+						</span>
+					</div>
+				</a>
+      </nav>
+      <img src='assets/image/logo.png' class='logo' />
+		</header>
+
+		<section>
+			<header>
+        <p class='slogan'>A rádio que todo mundo adora ouvir!</p>
+        <a href='./live.html' target='_black' class='btn-live'><span style='font-size: 14pt;padding-right: 8px;'>▶</span>Ouvir aovivo</a>
+      </header>
+      <aside>
+        <div class='banner-image'>
+          <img src='assets/image/cover.jpg' />
+        </div>
+      </aside>
+		</section>
+
+		<footer class='footer'>
+			<strong>Rádio Marazul FM 98,7 - ZYV 743</strong> © <span id='ano'></span>. Todos os direitos reservados.<br />
+			<em>Av. Carlos Martins Chaves, S/N | CEP: 62.597-000 | Distrito de Caiçara, Cruz/CE.</em>
+		</footer>
+
+		<script src='assets/js/liveProgram.js'></script>
+		<script>
+			updateLiveProgram();
+
+			setInterval( () => {
+				updateLiveProgram();
+			},
+			1000 * 60 * 5);
+
+			function updateLiveProgram() {
+				const liveProgram = getLiveProgram();
+
+				if (liveProgram) {
+					let programa = document.getElementById('live-now-program');
+					let locutor = document.getElementById('live-now-announcer');
+
+					programa.innerText = liveProgram.program;
+
+					if (liveProgram.announcer !== null)
+						locutor.innerText = `com ${liveProgram.announcer}`;
+					else
+						locutor.style.display = 'none';
+				} else {
+					let live = document.getElementById('live-now');
+
+					live.style.display = 'none';
+				}
+			}
+		</script>
+		 
+		<script>
+			document.getElementById('ano').innerHTML = new Date().getFullYear();
+		</script>
+	</body>
+</html>
