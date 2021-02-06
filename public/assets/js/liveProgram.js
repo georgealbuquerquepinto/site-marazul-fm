@@ -199,8 +199,25 @@ const programs = [
 const getLiveProgram = () => {
   const now = new Date();
   const todayPrograms = programs[now.getDay()];
-  const timeNow = `${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}`;
-  const liveProgram = todayPrograms.find(obj => { return obj.begin <= timeNow && obj.end >= timeNow })
 
-  return liveProgram;
+  for (let i = 0; i < todayPrograms.length; i++) {
+    const program = todayPrograms[i];
+    let startDate = new Date(now.getTime());
+    let endDate = new Date(now.getTime());
+    let sp = program.begin.split(':');
+
+    startDate.setHours(sp[0]);
+    startDate.setMinutes(sp[1]);
+    startDate.setSeconds(sp[2]);
+
+    sp = program.end.split(':');
+
+    endDate.setHours(sp[0]);
+    endDate.setMinutes(sp[1]);
+    endDate.setSeconds(sp[2]);
+
+    if (startDate < now && endDate > now) return program;
+  }
+
+  return null;
 }
